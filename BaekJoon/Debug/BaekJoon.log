@@ -1,4 +1,4 @@
 ﻿  14502.cpp
-C:\Users\TFW\source\repos\BaekJoon\BaekJoon\03. Gold\14502.cpp(16,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\TFW\source\repos\BaekJoon\BaekJoon\03. Gold\14502.cpp(94,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\TFW\source\repos\BaekJoon\BaekJoon\03. Gold\14502.cpp(19,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\TFW\source\repos\BaekJoon\BaekJoon\03. Gold\14502.cpp(40,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   BaekJoon.vcxproj -> C:\Users\TFW\source\repos\BaekJoon\Debug\BaekJoon.exe

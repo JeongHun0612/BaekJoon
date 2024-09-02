@@ -3,19 +3,34 @@
 #include <vector>
 
 #define MAX 8
-#define WALL_CNT 3
 
 using namespace std;
 
-int N, M, cnt, maxNum;
+int N, M, maxNum;
 int arr[MAX][MAX] = { 0 };
 
-vector<pair<int, int>> direction = { {1, 0}, {0, 1}, {-1, 0}, {0, -1} };
+vector<pair<int, int>> direction = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
 vector<pair<int, int>> vecWall, vecVirus;
 
-void spread()
+void DFS(int nIdx, int mIdx, int dfs[][MAX])
+{
+	for (int i = 0; i < direction.size(); i++)
+	{
+		int nextN = nIdx + direction[i].first;
+		int nextM = mIdx + direction[i].second;
+
+		if (nextN < 0 || nextN >= N || nextM < 0 || nextM >= M) continue;
+		if (dfs[nextN][nextM] == 2 || arr[nextN][nextM] == 1) continue;
+
+		dfs[nextN][nextM] = 2;
+		DFS(nextN, nextM, dfs);
+	}
+}
+
+int spread()
 {
 	int dfs[MAX][MAX] = { 0 };
+	int cnt = 0;
 
 	for (int i = 0; i < vecVirus.size(); i++)
 	{
@@ -26,41 +41,16 @@ void spread()
 
 		DFS(nIdx, mIdx, dfs);
 	}
-}
 
-
-void DFS(int nIdx, int mIdx, int dfs[MAX][MAX])
-{
-	for (int i = 0; i < direction.size(); i++)
-	{
-		int nextN = nIdx + direction[i].first;
-		int nextM = mIdx + direction[i].second;
-
-		if (nextN < 0 || nextN >= N || nextM < 0 || nextM >= M) continue;
-
-		if (dfs[nextN][nextM] == 0)
-		{
-			cnt--;
-			arr[nextN][nextM] = 2;
-			DFS(nextN, nextM, arr);
-		}
-	}
-}
-
-
-void Print()
-{
-	cout << endl;
-
-	// 4. 결과 출력
 	for (int i = 0; i < N; i++)
 	{
 		for (int j = 0; j < M; j++)
 		{
-			cout << arr[i][j] << " ";
+			if (arr[i][j] == 0 && dfs[i][j] == 0) cnt++;
 		}
-		cout << '\n';
 	}
+
+	return cnt;
 }
 
 int main()
@@ -95,17 +85,8 @@ int main()
 				arr[vecWall[j].first][vecWall[j].second] = 1;
 				arr[vecWall[k].first][vecWall[k].second] = 1;
 
-				cnt = vecWall.size() - 3;
-
-				// 3. 바이러스를 빈 영역에 퍼트리는 과정
-				//for (int l = 0; l < vecVirus.size(); l++)
-				//{
-				//	BFS(vecVirus[i].first, vecVirus[i].second, arr);
-				//}
-
-				Print();
-				cout << "Cnt : " << cnt << " | " << "Max : " << maxNum << '\n';
-				maxNum = std::max(maxNum, cnt);
+				// 3. 바이러스를 빈 영역에 퍼트리고 안전 영역의 갯수를 확인하는 과정
+				maxNum = std::max(maxNum, spread());
 
 				arr[vecWall[i].first][vecWall[i].second] = 0;
 				arr[vecWall[j].first][vecWall[j].second] = 0;
@@ -114,16 +95,7 @@ int main()
 		}
 	}
 
-	// 3. 바이러스를 빈 영역에 퍼트리는 과정
-	//for (int i = 0; i < vecVirus.size(); i++)
-	//{
-	//	BFS(vecVirus[i].first, vecVirus[i].second);
-	//}
-
-	//Print();
-
-	cout << endl;
-	cout << "Cnt : " << cnt << '\n';
+	cout << maxNum;
 
 	return 0;
 }
