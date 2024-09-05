@@ -45,5 +45,14 @@
     <ClCompile Include="03. Gold\15686.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="01. Bronze\1292.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="04. Platinum\None_1019.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="03. Gold\1947.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
