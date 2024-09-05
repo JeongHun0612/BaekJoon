@@ -1,4 +1,5 @@
 // # 소수 & 팰린드롬
+
 #include <iostream>
 #include <vector>
 #include <string>

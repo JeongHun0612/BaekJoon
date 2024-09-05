@@ -1,3 +1,5 @@
+// # 책 페이지
+
 #include <iostream>
 #include <string>
 
@@ -41,8 +43,6 @@ int main()
 	{
 		arr[i]++;
 	}
-	
-
 
 	return 0;
 }
