@@ -72,5 +72,8 @@
     <ClCompile Include="02. Sliver\2468.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="02. Sliver\10819.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
