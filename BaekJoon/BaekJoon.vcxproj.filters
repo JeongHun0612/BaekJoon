@@ -99,5 +99,11 @@
     <ClCompile Include="02. Sliver\1182.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="01. Bronze\2577.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="03. Gold\1107.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
