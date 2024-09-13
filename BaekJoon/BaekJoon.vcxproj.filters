@@ -93,5 +93,11 @@
     <ClCompile Include="02. Sliver\4375.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="02. Sliver\11726.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="02. Sliver\1182.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
